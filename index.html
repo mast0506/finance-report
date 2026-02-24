@@ -58,118 +58,141 @@
         .tag { display: inline-block; padding: 3px 10px; border-radius: 15px; font-size: 0.75rem; font-weight: 600; margin: 2px; }
         .tag-green { background: #d4edda; color: #155724; }
         .tag-red { background: #f8d7da; color: #721c24; }
+        .tag-orange { background: #fff3cd; color: #856404; }
         .news-item { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #6001d2; }
+        .crypto-box { background: linear-gradient(135deg, #f7931a 0%, #ff6b6b 100%); color: white; padding: 15px; border-radius: 12px; margin: 15px 0; }
         .footer { background: #1a1a2e; color: white; text-align: center; padding: 20px 15px; font-size: 0.8rem; }
         .yahoo-logo { color: #6001d2; font-weight: bold; }
+        .crypto-icon { font-size: 1.2rem; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="source">📊 Powered by <span class="yahoo-logo">Yahoo Finance</span></div>
+            <div class="source">📊 Powered by <span class="yahoo-logo">Yahoo Finance</span> + <span style="color:#f7931a;">Crypto</span></div>
             <h1>📈 财经简报</h1>
             <div class="date">📅 2026年2月24日 | 星期二</div>
         </div>
         
         <div class="content">
-            <!-- 全球市场 - Yahoo Finance 数据 -->
+            <!-- 虚拟货币 -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="crypto-icon">₿</span> 虚拟货币行情
+                </div>
+                
+                <div class="crypto-box">
+                    <strong>⚠️ 虚拟货币集体大跌</strong><br>
+                    比特币跌破6.3万美元，创2月6日以来新低，超11.4万人爆仓，单日蒸发3300亿元！
+                </div>
+                
+                <div class="table-wrapper">
+                    <table>
+                        <tr>
+                            <th>币种</th>
+                            <th>价格（美元）</th>
+                            <th>24h涨跌</th>
+                            <th>7日涨跌</th>
+                            <th>趋势</th>
+                        </tr>
+                        <tr>
+                            <td><strong>₿ 比特币 BTC</strong></td>
+                            <td>$63,200</td>
+                            <td class="down">▼ -3.8%</td>
+                            <td class="down">▼ -7.5%</td>
+                            <td><span class="tag tag-red">跌破支撑</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ξ 以太坊 ETH</strong></td>
+                            <td>$1,825</td>
+                            <td class="down">▼ -4.1%</td>
+                            <td class="down">▼ -8.0%</td>
+                            <td><span class="tag tag-red">跌破1900</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong> BNB</strong></td>
+                            <td>约$580</td>
+                            <td class="down">▼ -3.5%</td>
+                            <td class="down">▼ -5.2%</td>
+                            <td><span class="tag tag-red">下跌</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong> SOL</strong></td>
+                            <td>约$130</td>
+                            <td class="down">▼ -5.0%</td>
+                            <td class="down">▼ -10.5%</td>
+                            <td><span class="tag tag-red">领跌</span></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>📊 市场数据</strong><br>
+                    • 爆仓人数：超11.4万人<br>
+                    • 爆仓金额：单日蒸发3300亿元<br>
+                    • 比特币最低：$62,700（2月6日以来新低）
+                </div>
+                
+                <div class="news-item">
+                    <strong>🔍 下跌原因分析</strong><br>
+                    1. 美联储降息预期降温，美元走强<br>
+                    2. 美股科技股回调，风险资产承压<br>
+                    3. 地缘政治风险（美伊局势）<br>
+                    4. 前期涨幅过大，获利盘出逃
+                </div>
+            </div>
+
+            <!-- 全球市场 -->
             <div class="section">
                 <div class="section-title">🌍 全球市场 (Yahoo Finance)</div>
+                
                 <div class="table-wrapper">
                     <table>
-                        <tr><th>指数</th><th>代码</th><th>最新数据</th><th>趋势</th></tr>
-                        <tr>
-                            <td>🇭🇰 恒生指数</td>
-                            <td>^HSI</td>
-                            <td>27,082 点</td>
-                            <td class="up">▲ +2.53%</td>
-                        </tr>
-                        <tr>
-                            <td>🇺🇸 道琼斯指数</td>
-                            <td>.DJI</td>
-                            <td>49,207 点</td>
-                            <td class="down">▼ -0.38%</td>
-                        </tr>
-                        <tr>
-                            <td>🇺🇸 标普500指数</td>
-                            <td>^GSPC</td>
-                            <td>6,909 点</td>
-                            <td class="up">▲ +0.69%</td>
-                        </tr>
-                        <tr>
-                            <td>🇺🇸 纳斯达克指数</td>
-                            <td>^IXIC</td>
-                            <td>约 20,000 点</td>
-                            <td>波动</td>
-                        </tr>
+                        <tr><th>指数</th><th>代码</th><th>收盘</th><th>涨跌</th></tr>
+                        <tr><td>🇨🇳 上证指数</td><td>- </td><td>4,117点</td><td class="up">▲ +0.87%</td></tr>
+                        <tr><td>🇨🇳 深证成指</td><td>- </td><td>14,292点</td><td class="up">▲ +1.36%</td></tr>
+                        <tr><td>🇨🇳 创业板指</td><td>- </td><td>3,308点</td><td class="up">▲ +0.99%</td></tr>
+                        <tr><td>🇭🇰 恒生指数</td><td>^HSI</td><td>27,082点</td><td class="up">▲ +2.53%</td></tr>
+                        <tr><td>🇺🇸 道琼斯</td><td>.DJI</td><td>49,207点</td><td class="down">▼ -0.38%</td></tr>
+                        <tr><td>🇺🇸 标普500</td><td>^GSPC</td><td>6,909点</td><td class="up">▲ +0.69%</td></tr>
                     </table>
                 </div>
+            </div>
+
+            <!-- A股详情 -->
+            <div class="section">
+                <div class="section-title">📊 A股马年开门红</div>
+                
                 <div class="highlight-box">
-                    <strong>💡 Yahoo Finance 数据亮点</strong><br>
-                    港股恒生指数强劲反弹，标普500创收盘新高，道指小幅回调。
+                    <strong>🎉 今日亮点</strong><br>
+                    • 成交额：2.2万亿元（放量2100亿）<br>
+                    • 上涨个股：4,006只（超百股涨停）<br>
+                    • 沪指突破4100点
                 </div>
-            </div>
-
-            <!-- 个股动态 - Yahoo Finance -->
-            <div class="section">
-                <div class="section-title">📊 热门个股 (Yahoo Finance)</div>
+                
                 <div class="table-wrapper">
                     <table>
-                        <tr><th>股票</th><th>代码</th><th>板块</th><th>动态</th></tr>
-                        <tr><td>美团</td><td>3690.HK</td><td>港股科技</td><td class="up">▲ +5.3%</td></tr>
-                        <tr><td>阿里巴巴</td><td>9988.HK / BABA</td><td>港股科技</td><td class="up">▲ +3.5%</td></tr>
-                        <tr><td>腾讯控股</td><td>0700.HK / TCEHY</td><td>港股科技</td><td class="up">▲ +3.1%</td></tr>
-                        <tr><td>AMD</td><td>AMD</td><td>美股芯片</td><td class="down">▼ -17%</td></tr>
-                        <tr><td>英伟达</td><td>NVDA</td><td>美股芯片</td><td>微跌</td></tr>
+                        <tr><th>板块</th><th>涨跌幅</th><th> catalyst</th></tr>
+                        <tr><td>🛢️ 石油石化</td><td class="up">▲ +5.53%</td><td>油价上涨</td></tr>
+                        <tr><td>🏗️ 建筑材料</td><td class="up">▲ +3.71%</td><td>基建预期</td></tr>
+                        <tr><td>🧪 基础化工</td><td class="up">▲ +3.45%</td><td>产品涨价</td></tr>
+                        <tr><td>🎬 传媒</td><td class="down">▼ -3.20%</td><td>春节后回调</td></tr>
+                        <tr><td>💻 计算机</td><td class="down">▼ -1.81%</td><td>AI获利回吐</td></tr>
                     </table>
                 </div>
             </div>
 
-            <!-- 大宗商品 - Yahoo Finance -->
+            <!-- 大宗商品 -->
             <div class="section">
-                <div class="section-title">🏅 大宗商品 (Yahoo Finance)</div>
+                <div class="section-title">🏅 大宗商品</div>
+                
                 <div class="table-wrapper">
                     <table>
-                        <tr><th>品种</th><th>代码</th><th>价格</th><th>趋势</th></tr>
-                        <tr><td>🥇 黄金</td><td>GC=F</td><td>$5,176/盎司</td><td class="up">▲ 逼近历史高位</td></tr>
-                        <tr><td>🛢️ 原油 (WTI)</td><td>CL=F</td><td>约$80/桶</td><td class="up">▲ +3%</td></tr>
-                        <tr><td>📈 美元指数</td><td>DX-Y.NYB</td><td>回调中</td><td class="down">▼ 下跌</td></tr>
+                        <tr><th>品种</th><th>价格</th><th>涨跌</th></tr>
+                        <tr><td>🥇 黄金</td><td>$5,176/盎司</td><td class="up">▲ 逼近5200</td></tr>
+                        <tr><td>🛢️ 原油</td><td>$80/桶</td><td class="up">▲ +3%</td></tr>
+                        <tr><td>💵 人民币</td><td>6.89/美元</td><td class="up">▲ 升值1.3%</td></tr>
                     </table>
-                </div>
-            </div>
-
-            <!-- 重大新闻 -->
-            <div class="section">
-                <div class="section-title">📰 重大新闻</div>
-                
-                <div class="news-item">
-                    <strong>🏛️ 2025年中央一号文件发布</strong><br>
-                    2月23日发布《关于进一步深化农村改革扎实推进乡村全面振兴的意见》，聚焦农村改革和乡村振兴。
-                </div>
-                
-                <div class="news-item">
-                    <strong>💰 外资流入中国股市</strong><br>
-                    国际金融协会（IIF）报告显示，2025年1月中国股市和债市吸引外资流入逾百亿美元。
-                </div>
-                
-                <div class="news-item">
-                    <strong>🤖 AI与机器人板块火热</strong><br>
-                    春晚机器人表演引爆市场，港股机器人概念股大涨，越疆涨21%，速腾聚创涨9%。
-                </div>
-            </div>
-
-            <!-- 投资日历 -->
-            <div class="section">
-                <div class="section-title">📅 本周关注</div>
-                <div class="news-item">
-                    <strong>周二（2月24日）</strong><br>
-                    • A股马年首个交易日<br>
-                    • 特朗普发表国情咨文
-                </div>
-                <div class="news-item">
-                    <strong>关注美联储动态</strong><br>
-                    • 美联储理事讲话<br>
-                    • 关注货币政策动向
                 </div>
             </div>
 
@@ -179,23 +202,24 @@
                 
                 <div style="background: #d4edda; padding: 15px; border-radius: 10px; margin: 10px 0; border-left: 4px solid #28a745;">
                     <strong>✅ 机会</strong><br>
-                    • 港股科技股反弹强劲（美团、阿里、腾讯）<br>
-                    • 标普500创收盘新高<br>
-                    • 黄金突破历史新高<br>
-                    • 机器人/AI板块热度高
+                    • A股马年开门红，放量上涨<br>
+                    • 港股科技股反弹<br>
+                    • 黄金、原油上涨<br>
+                    • 周期股（石油、化工）强势
                 </div>
                 
                 <div style="background: #f8d7da; padding: 15px; border-radius: 10px; margin: 10px 0; border-left: 4px solid #dc3545;">
                     <strong>⚠️ 风险</strong><br>
-                    • AMD大跌17%，芯片股波动大<br>
-                    • 道指小幅回调<br>
-                    • 关注地缘政治风险
+                    • 虚拟货币大跌，比特币跌破6.3万<br>
+                    • 美股芯片股波动（AMD跌17%）<br>
+                    • AI应用板块回调<br>
+                    • 超11万人爆仓，注意风险
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <p>📊 数据来源：<span class="yahoo-logo">Yahoo Finance</span>、新浪财经</p>
+            <p>📊 数据来源：Yahoo Finance、新浪财经、Binance、CoinMarketCap</p>
             <p>本报告仅供参考，不构成投资建议</p>
             <p>报告生成：OpenClaw AI助手 | 2026年2月24日</p>
         </div>
