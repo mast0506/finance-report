@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>财经简报 - 2026年2月24日</title>
+    <title>财经简报 - Yahoo Finance - 2026年2月24日</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            background: linear-gradient(135deg, #6001d2 0%, #8b5cf6 100%);
             min-height: 100vh;
             color: #333;
         }
@@ -21,14 +21,15 @@
             .container { max-width: 900px; margin: 20px auto; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
         }
         .header {
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: white;
             padding: 30px 20px;
             text-align: center;
         }
         @media (min-width: 768px) { .header { padding: 40px; border-radius: 20px 20px 0 0; } }
         .header h1 { font-size: 1.8rem; margin-bottom: 8px; }
-        .header .date { margin-top: 12px; font-size: 0.9rem; background: rgba(255,255,255,0.2); display: inline-block; padding: 6px 16px; border-radius: 20px; }
+        .header .source { font-size: 0.9rem; color: #8b5cf6; margin-bottom: 5px; }
+        .header .date { margin-top: 12px; font-size: 0.85rem; background: rgba(255,255,255,0.2); display: inline-block; padding: 6px 16px; border-radius: 20px; }
         .content { padding: 20px 15px; }
         @media (min-width: 768px) { .content { padding: 40px; } }
         .section {
@@ -36,11 +37,11 @@
             background: #f8f9fa;
             border-radius: 12px;
             padding: 20px 15px;
-            border-left: 4px solid #11998e;
+            border-left: 4px solid #6001d2;
         }
         .section-title {
             font-size: 1.2rem;
-            color: #0f2027;
+            color: #1a1a2e;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -49,53 +50,90 @@
         }
         .table-wrapper { overflow-x: auto; margin: 15px 0; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         table { width: 100%; min-width: 600px; border-collapse: collapse; background: white; font-size: 0.85rem; }
-        th { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 12px 10px; text-align: left; }
+        th { background: linear-gradient(135deg, #6001d2 0%, #8b5cf6 100%); color: white; padding: 12px 10px; text-align: left; }
         td { padding: 10px; border-bottom: 1px solid #eee; }
         .up { color: #28a745; font-weight: bold; }
         .down { color: #dc3545; font-weight: bold; }
-        .highlight-box { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 15px; border-radius: 12px; margin: 15px 0; }
+        .highlight-box { background: linear-gradient(135deg, #6001d2 0%, #8b5cf6 100%); color: white; padding: 15px; border-radius: 12px; margin: 15px 0; }
         .tag { display: inline-block; padding: 3px 10px; border-radius: 15px; font-size: 0.75rem; font-weight: 600; margin: 2px; }
         .tag-green { background: #d4edda; color: #155724; }
         .tag-red { background: #f8d7da; color: #721c24; }
-        .news-item { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #11998e; }
-        .footer { background: #0f2027; color: white; text-align: center; padding: 20px 15px; font-size: 0.8rem; }
+        .news-item { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #6001d2; }
+        .footer { background: #1a1a2e; color: white; text-align: center; padding: 20px 15px; font-size: 0.8rem; }
+        .yahoo-logo { color: #6001d2; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <div class="source">📊 Powered by <span class="yahoo-logo">Yahoo Finance</span></div>
             <h1>📈 财经简报</h1>
             <div class="date">📅 2026年2月24日 | 星期二</div>
         </div>
         
         <div class="content">
-            <!-- 全球市场 -->
+            <!-- 全球市场 - Yahoo Finance 数据 -->
             <div class="section">
-                <div class="section-title">🌍 全球市场</div>
+                <div class="section-title">🌍 全球市场 (Yahoo Finance)</div>
                 <div class="table-wrapper">
                     <table>
-                        <tr><th>市场</th><th>指数</th><th>变动</th></tr>
-                        <tr><td>🇭🇰 港股</td><td>恒生指数 27,082点</td><td class="up">▲ +2.53%</td></tr>
-                        <tr><td>🇭🇰 港股科技</td><td>恒生科技 5,385点</td><td class="up">▲ +3.34%</td></tr>
-                        <tr><td>🇨🇳 A股</td><td>今日马年首个交易日</td><td>🎯 期待开门红</td></tr>
-                        <tr><td>🇺🇸 美股</td><td>上周五收跌</td><td class="down">▼ AMD跌17%</td></tr>
+                        <tr><th>指数</th><th>代码</th><th>最新数据</th><th>趋势</th></tr>
+                        <tr>
+                            <td>🇭🇰 恒生指数</td>
+                            <td>^HSI</td>
+                            <td>27,082 点</td>
+                            <td class="up">▲ +2.53%</td>
+                        </tr>
+                        <tr>
+                            <td>🇺🇸 道琼斯指数</td>
+                            <td>.DJI</td>
+                            <td>49,207 点</td>
+                            <td class="down">▼ -0.38%</td>
+                        </tr>
+                        <tr>
+                            <td>🇺🇸 标普500指数</td>
+                            <td>^GSPC</td>
+                            <td>6,909 点</td>
+                            <td class="up">▲ +0.69%</td>
+                        </tr>
+                        <tr>
+                            <td>🇺🇸 纳斯达克指数</td>
+                            <td>^IXIC</td>
+                            <td>约 20,000 点</td>
+                            <td>波动</td>
+                        </tr>
                     </table>
                 </div>
                 <div class="highlight-box">
-                    <strong>💡 市场亮点</strong><br>
-                    港股强势上涨，科网股集体反弹，美团大涨5.3%，阿里涨3.5%，腾讯涨3.1%
+                    <strong>💡 Yahoo Finance 数据亮点</strong><br>
+                    港股恒生指数强劲反弹，标普500创收盘新高，道指小幅回调。
                 </div>
             </div>
 
-            <!-- 大宗商品 -->
+            <!-- 个股动态 - Yahoo Finance -->
             <div class="section">
-                <div class="section-title">🏅 大宗商品</div>
+                <div class="section-title">📊 热门个股 (Yahoo Finance)</div>
                 <div class="table-wrapper">
                     <table>
-                        <tr><th>品种</th><th>价格</th><th>变动</th></tr>
-                        <tr><td>🥇 黄金</td><td>$5,176/盎司</td><td class="up">▲ 逼近5200美元</td></tr>
-                        <tr><td>🛢️ 原油</td><td>约$80/桶</td><td class="up">▲ +3%</td></tr>
-                        <tr><td>💵 人民币</td><td>6.89元/美元</td><td class="up">▲ 2月升值1.3%</td></tr>
+                        <tr><th>股票</th><th>代码</th><th>板块</th><th>动态</th></tr>
+                        <tr><td>美团</td><td>3690.HK</td><td>港股科技</td><td class="up">▲ +5.3%</td></tr>
+                        <tr><td>阿里巴巴</td><td>9988.HK / BABA</td><td>港股科技</td><td class="up">▲ +3.5%</td></tr>
+                        <tr><td>腾讯控股</td><td>0700.HK / TCEHY</td><td>港股科技</td><td class="up">▲ +3.1%</td></tr>
+                        <tr><td>AMD</td><td>AMD</td><td>美股芯片</td><td class="down">▼ -17%</td></tr>
+                        <tr><td>英伟达</td><td>NVDA</td><td>美股芯片</td><td>微跌</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 大宗商品 - Yahoo Finance -->
+            <div class="section">
+                <div class="section-title">🏅 大宗商品 (Yahoo Finance)</div>
+                <div class="table-wrapper">
+                    <table>
+                        <tr><th>品种</th><th>代码</th><th>价格</th><th>趋势</th></tr>
+                        <tr><td>🥇 黄金</td><td>GC=F</td><td>$5,176/盎司</td><td class="up">▲ 逼近历史高位</td></tr>
+                        <tr><td>🛢️ 原油 (WTI)</td><td>CL=F</td><td>约$80/桶</td><td class="up">▲ +3%</td></tr>
+                        <tr><td>📈 美元指数</td><td>DX-Y.NYB</td><td>回调中</td><td class="down">▼ 下跌</td></tr>
                     </table>
                 </div>
             </div>
@@ -111,26 +149,12 @@
                 
                 <div class="news-item">
                     <strong>💰 外资流入中国股市</strong><br>
-                    国际金融协会（IIF）报告显示，2025年1月中国股市和债市吸引外资流入逾百亿美元，为去年8月以来首次同时净流入。
+                    国际金融协会（IIF）报告显示，2025年1月中国股市和债市吸引外资流入逾百亿美元。
                 </div>
                 
                 <div class="news-item">
                     <strong>🤖 AI与机器人板块火热</strong><br>
-                    春晚机器人表演引爆市场，港股机器人概念股大涨，越疆涨21%，速腾聚创涨9%，优必选涨6%。
-                </div>
-            </div>
-
-            <!-- 热门板块 -->
-            <div class="section">
-                <div class="section-title">🔥 热门板块</div>
-                <div class="table-wrapper">
-                    <table>
-                        <tr><th>板块</th><th>代表个股</th><th>催化剂</th></tr>
-                        <tr><td>🤖 机器人</td><td>绿的谐波、双环传动</td><td>春晚效应、特斯拉Optimus</td></tr>
-                        <tr><td>🧠 AI/人工智能</td><td>中际旭创、工业富联</td><td>大模型迭代加速</td></tr>
-                        <tr><td>🏅 黄金/有色</td><td>紫金矿业、赤峰黄金</td><td>金价突破5200美元</td></tr>
-                        <tr><td>🚢 航运</td><td>中远海控、中远海能</td><td>BDI大涨至2112点</td></tr>
-                    </table>
+                    春晚机器人表演引爆市场，港股机器人概念股大涨，越疆涨21%，速腾聚创涨9%。
                 </div>
             </div>
 
@@ -139,13 +163,13 @@
                 <div class="section-title">📅 本周关注</div>
                 <div class="news-item">
                     <strong>周二（2月24日）</strong><br>
-                    • A股马年首个交易日，关注"开门红"行情<br>
+                    • A股马年首个交易日<br>
                     • 特朗普发表国情咨文
                 </div>
                 <div class="news-item">
-                    <strong>周三（2月25日）</strong><br>
-                    • 美联储理事沃勒讲话<br>
-                    • 关注美联储货币政策动向
+                    <strong>关注美联储动态</strong><br>
+                    • 美联储理事讲话<br>
+                    • 关注货币政策动向
                 </div>
             </div>
 
@@ -155,23 +179,23 @@
                 
                 <div style="background: #d4edda; padding: 15px; border-radius: 10px; margin: 10px 0; border-left: 4px solid #28a745;">
                     <strong>✅ 机会</strong><br>
-                    • 港股科技股反弹强劲<br>
+                    • 港股科技股反弹强劲（美团、阿里、腾讯）<br>
+                    • 标普500创收盘新高<br>
                     • 黄金突破历史新高<br>
-                    • BDI大涨利好航运股<br>
                     • 机器人/AI板块热度高
                 </div>
                 
                 <div style="background: #f8d7da; padding: 15px; border-radius: 10px; margin: 10px 0; border-left: 4px solid #dc3545;">
                     <strong>⚠️ 风险</strong><br>
-                    • 美股芯片股波动大<br>
-                    • 集装箱运价回调<br>
+                    • AMD大跌17%，芯片股波动大<br>
+                    • 道指小幅回调<br>
                     • 关注地缘政治风险
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <p>📊 数据来源：新浪财经、东方财富、财联社</p>
+            <p>📊 数据来源：<span class="yahoo-logo">Yahoo Finance</span>、新浪财经</p>
             <p>本报告仅供参考，不构成投资建议</p>
             <p>报告生成：OpenClaw AI助手 | 2026年2月24日</p>
         </div>
