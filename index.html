@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>财经资讯</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>财经资讯周报</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { font-size: 16px; }
@@ -62,6 +61,13 @@
         }
         .section h2 .icon { 
             font-size: 1.1rem; 
+        }
+        .section h3 {
+            color: #6ee7b7;
+            font-size: 1rem;
+            margin: 15px 0 10px 0;
+            padding-left: 10px;
+            border-left: 3px solid #059669;
         }
         .market-overview {
             display: grid;
@@ -206,6 +212,39 @@
             color: #d1d5db;
             font-size: 0.85rem;
         }
+        .risk-card {
+            background: #0a0f1c;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 3px solid #ef4444;
+        }
+        .risk-card h4 {
+            color: #f87171;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .risk-card p {
+            color: #d1d5db;
+            font-size: 0.85rem;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #60a5fa;
+        }
+        .highlight-box h4 {
+            color: #93c5fd;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+        .highlight-box p {
+            color: #dbeafe;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
         footer { 
             text-align: center; 
             padding: 20px 15px; 
@@ -228,296 +267,616 @@
 <body>
     <div class="container">
         <header>
-            <h1>📈 财经资讯</h1>
-            <div class="subtitle">Global Financial Intelligence Report</div>
-            <div class="date">2026年2月27日 星期五 | 日报</div>
+            <h1>📈 财经资讯周报</h1>
+            <div class="subtitle">Weekly Financial Intelligence Report</div>
+            <div class="date">2026年2月23日 - 2月27日 | 第9周</div>
         </header>
 
-        <!-- 今日热点 -->
+        <!-- 本周热点 -->
         <div class="section">
-            <h2><span class="icon">🔥</span>今日热点</h2>
+            <h2><span class="icon">🔥</span>本周热点</h2>
             <div class="hot-topics">
-                <span class="topic-tag">美联储政策</span>
-                <span class="topic-tag">原油价格</span>
-                <span class="topic-tag">比特币</span>
-                <span class="topic-tag">A股走势</span>
-                <span class="topic-tag">美元指数</span>
+                <span class="topic-tag">沃什获美联储主席提名</span>
+                <span class="topic-tag">央行下调外汇风险准备金率</span>
+                <span class="topic-tag">比特币强劲反弹</span>
+                <span class="topic-tag">黄金突破5200美元</span>
+                <span class="topic-tag">美伊核谈判</span>
+                <span class="topic-tag">英伟达财报</span>
             </div>
         </div>
 
-        <!-- 全球市场概览 -->
+        <!-- 全球市场周度回顾 -->
         <div class="section">
-            <h2><span class="icon">🌍</span>全球市场概览</h2>
+            <h2><span class="icon">🌍</span>全球市场周度回顾</h2>
+            
+            <div class="highlight-box">
+                <h4>📊 市场综述</h4>
+                <p>本周全球市场呈现分化态势。美股三大指数涨跌互现，科技股表现分化；美元指数维持强势，美联储政策预期持续主导市场情绪；黄金突破5200美元心理关口，创历史新高；原油在美伊核谈判预期下维持震荡。</p>
+            </div>
+
+            <h3>股指走势</h3>
             <div class="market-overview">
                 <div class="market-card">
-                    <div class="name">上证指数</div>
-                    <div class="value">3,380.00</div>
-                    <div class="change up">+0.50%</div>
+                    <div class="name">标普500</div>
+                    <div class="value">~5,980</div>
+                    <div class="change up">+1.07%</div>
                 </div>
                 <div class="market-card">
                     <div class="name">纳斯达克</div>
-                    <div class="value">18,500.00</div>
-                    <div class="change down">-0.30%</div>
+                    <div class="value">~18,500</div>
+                    <div class="change up">+1.51%</div>
                 </div>
                 <div class="market-card">
-                    <div class="name">布伦特原油</div>
-                    <div class="value">$82.50</div>
-                    <div class="change up">+1.20%</div>
+                    <div class="name">道琼斯</div>
+                    <div class="value">~43,500</div>
+                    <div class="change up">+0.19%</div>
                 </div>
                 <div class="market-card">
-                    <div class="name">比特币</div>
-                    <div class="value">$58,000</div>
-                    <div class="change up">+2.50%</div>
+                    <div class="name">美元指数</div>
+                    <div class="value">97.62</div>
+                    <div class="change down">-0.15%</div>
                 </div>
             </div>
-        </div>
 
-        <!-- 股票市场 -->
-        <div class="section">
-            <h2><span class="icon">📊</span>股票市场</h2>
-            <h3>A股</h3>
+            <h3>汇率与利率</h3>
             <table>
                 <thead>
                     <tr>
-                        <th>指数</th>
-                        <th>点位</th>
-                        <th>涨跌</th>
-                        <th>成交额</th>
+                        <th>货币对/利率</th>
+                        <th>本周收盘</th>
+                        <th>周涨跌</th>
+                        <th>关键事件</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>上证指数</td>
-                        <td>3,380.00</td>
-                        <td style="color:#34d399">+0.50%</td>
-                        <td>4,500亿</td>
+                        <td>EUR/USD</td>
+                        <td>1.1818</td>
+                        <td style="color:#34d399">+0.22%</td>
+                        <td>欧央行维持利率不变</td>
                     </tr>
                     <tr>
-                        <td>深证成指</td>
-                        <td>10,800.00</td>
-                        <td style="color:#34d399">+0.80%</td>
-                        <td>6,200亿</td>
+                        <td>USD/CNY</td>
+                        <td>7.20区间</td>
+                        <td style="color:#f87171">人民币升值</td>
+                        <td>央行下调外汇风险准备金率</td>
                     </tr>
                     <tr>
-                        <td>创业板指</td>
-                        <td>2,180.00</td>
-                        <td style="color:#f87171">-0.20%</td>
-                        <td>2,800亿</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>美股</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>指数</th>
-                        <th>点位</th>
-                        <th>涨跌</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>道琼斯</td>
-                        <td>43,500.00</td>
-                        <td style="color:#34d399">+0.20%</td>
+                        <td>美联储基准利率</td>
+                        <td>3.50%-3.75%</td>
+                        <td style="color:#9ca3af">维持不变</td>
+                        <td>沃什提名引发鹰派预期</td>
                     </tr>
                     <tr>
-                        <td>标普500</td>
-                        <td>5,980.00</td>
-                        <td style="color:#f87171">-0.15%</td>
-                    </tr>
-                    <tr>
-                        <td>纳斯达克</td>
-                        <td>18,500.00</td>
-                        <td style="color:#f87171">-0.30%</td>
+                        <td>10年期美债收益率</td>
+                        <td>~4.3%</td>
+                        <td style="color:#34d399">小幅上行</td>
+                        <td>通胀数据超预期</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- 大宗商品 -->
+        <!-- 股票市场周度表现 -->
         <div class="section">
-            <h2><span class="icon">⛽</span>大宗商品</h2>
+            <h2><span class="icon">📊</span>股票市场周度表现</h2>
+            
+            <h3>A股市场</h3>
+            <div class="highlight-box">
+                <h4>🇨🇳 A股动态</h4>
+                <p>本周A股春节后行情启动，2月24日农历马年首个交易日呈现"量价齐升"格局，三大指数集体收涨，成交额突破2.2万亿元。上证指数站稳4100点上方，市场信心有所恢复。</p>
+            </div>
             <table>
                 <thead>
                     <tr>
-                        <th>品种</th>
-                        <th>价格</th>
-                        <th>涨跌</th>
+                        <th>指数</th>
+                        <th>本周收盘</th>
+                        <th>周涨跌</th>
                         <th>备注</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>布伦特原油</td>
-                        <td>$82.50</td>
-                        <td style="color:#34d399">+1.20%</td>
-                        <td>供应担忧</td>
+                        <td>上证指数</td>
+                        <td>~4,163</td>
+                        <td style="color:#34d399">+0.39%</td>
+                        <td>站稳4100点</td>
                     </tr>
                     <tr>
-                        <td>WTI原油</td>
-                        <td>$78.30</td>
-                        <td style="color:#34d399">+1.10%</td>
-                        <td>-</td>
+                        <td>沪深300</td>
+                        <td>~4,736</td>
+                        <td style="color:#34d399">+0.60%</td>
+                        <td>外资小幅流入</td>
                     </tr>
                     <tr>
-                        <td>黄金</td>
-                        <td>$2,050/oz</td>
-                        <td style="color:#34d399">+0.50%</td>
-                        <td>避险需求</td>
+                        <td>创业板指</td>
+                        <td>~2,180</td>
+                        <td style="color:#f87171">震荡调整</td>
+                        <td>科技股分化</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>港股市场</h3>
+            <div class="highlight-box">
+                <h4>🇭🇰 港股动态</h4>
+                <p>港股本周表现强劲，恒生指数重上27,000点关口。2月24日单日升668点，涨幅2.5%，主板成交额近1730亿港元。科技板块领涨，市场情绪明显改善。</p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>指数</th>
+                        <th>本周收盘</th>
+                        <th>周涨跌</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>恒生指数</td>
+                        <td>27,020</td>
+                        <td style="color:#34d399">+2.5%</td>
+                        <td>重上27000点</td>
                     </tr>
                     <tr>
-                        <td>铜</td>
-                        <td>$8,500/吨</td>
-                        <td style="color:#f87171">-0.30%</td>
-                        <td>-</td>
+                        <td>恒生科技指数</td>
+                        <td>~5,500</td>
+                        <td style="color:#34d399">+3.0%</td>
+                        <td>科技股领涨</td>
+                    </tr>
+                    <tr>
+                        <td>恒生国企指数</td>
+                        <td>~10,200</td>
+                        <td style="color:#34d399">+2.3%</td>
+                        <td>中概股反弹</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>美股市场</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>指数</th>
+                        <th>本周收盘</th>
+                        <th>周涨跌</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>道琼斯工业平均</td>
+                        <td>~43,500</td>
+                        <td style="color:#34d399">+0.19%</td>
+                        <td>再创历史新高</td>
+                    </tr>
+                    <tr>
+                        <td>标普500</td>
+                        <td>~5,980</td>
+                        <td style="color:#34d399">+1.07%</td>
+                        <td>科技股带动</td>
+                    </tr>
+                    <tr>
+                        <td>纳斯达克综合</td>
+                        <td>~18,500</td>
+                        <td style="color:#34d399">+1.51%</td>
+                        <td>英伟达财报前反弹</td>
+                    </tr>
+                    <tr>
+                        <td>罗素2000</td>
+                        <td>~2,200</td>
+                        <td style="color:#34d399">+0.51%</td>
+                        <td>小盘股温和上涨</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- 加密货币 -->
+        <!-- 大宗商品周度走势 -->
         <div class="section">
-            <h2><span class="icon">₿</span>加密货币</h2>
+            <h2><span class="icon">⛽</span>大宗商品周度走势</h2>
+            
+            <div class="highlight-box">
+                <h4>🛢️ 原油市场</h4>
+                <p>WTI原油本周在$65-$67.20区间震荡整理，美伊核谈判成为关键变量。若谈判破裂或出现军事冲突，油价可能在数小时内跳涨$15-20/桶。2月整体上涨约2.5%，延续1月13.6%的涨势。</p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>品种</th>
+                        <th>本周收盘</th>
+                        <th>周涨跌</th>
+                        <th>关键驱动</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>WTI原油</td>
+                        <td>$65.56</td>
+                        <td style="color:#f87171">-0.44%</td>
+                        <td>美伊谈判、库存数据</td>
+                    </tr>
+                    <tr>
+                        <td>布伦特原油</td>
+                        <td>$70.88</td>
+                        <td style="color:#34d399">+0.43%</td>
+                        <td>地缘政治溢价</td>
+                    </tr>
+                    <tr>
+                        <td>黄金(XAU/USD)</td>
+                        <td>$5,205</td>
+                        <td style="color:#34d399">+0.57%</td>
+                        <td>避险需求、美元走弱</td>
+                    </tr>
+                    <tr>
+                        <td>白银(XAG/USD)</td>
+                        <td>$90.10</td>
+                        <td style="color:#34d399">+2.96%</td>
+                        <td>工业需求、AI/太阳能</td>
+                    </tr>
+                    <tr>
+                        <td>铜</td>
+                        <td>$5.96/lb</td>
+                        <td style="color:#34d399">+0.37%</td>
+                        <td>AI数据中心需求</td>
+                    </tr>
+                    <tr>
+                        <td>天然气</td>
+                        <td>$3.10</td>
+                        <td style="color:#f87171">-0.64%</td>
+                        <td>需求季节性回落</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <h4>🥇 贵金属突破</h4>
+                <p>黄金本周延续第五个交易日上涨，站稳$5,000心理关口上方，最高触及$5,218。白银表现更为强劲，单日涨幅创2月初以来新高，受AI基础设施和太阳能应用需求推动。</p>
+            </div>
+        </div>
+
+        <!-- 加密货币周度表现 -->
+        <div class="section">
+            <h2><span class="icon">₿</span>加密货币周度表现</h2>
+            
+            <div class="highlight-box">
+                <h4>📈 强劲反弹</h4>
+                <p>本周比特币和以太坊强劲反弹，BTC一度逼近$70,000关口，ETH涨幅近11%。机构资金通过ETF重新流入，市场情绪明显改善。比特币在$65,000-$68,000区间震荡后向上突破。</p>
+            </div>
+
             <table>
                 <thead>
                     <tr>
                         <th>币种</th>
-                        <th>价格(USD)</th>
-                        <th>24h涨跌</th>
-                        <th>市值</th>
+                        <th>本周收盘</th>
+                        <th>周涨跌</th>
+                        <th>关键事件</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>比特币 BTC</td>
-                        <td>$58,000</td>
-                        <td style="color:#34d399">+2.50%</td>
-                        <td>$1.14T</td>
+                        <td>~$70,000</td>
+                        <td style="color:#34d399">+6%</td>
+                        <td>ETF资金流入、机构配置</td>
                     </tr>
                     <tr>
                         <td>以太坊 ETH</td>
-                        <td>$3,200</td>
-                        <td style="color:#34d399">+1.80%</td>
-                        <td>$385B</td>
+                        <td>~$2,100</td>
+                        <td style="color:#34d399">+11%</td>
+                        <td>Layer2发展、质押需求</td>
+                    </tr>
+                    <tr>
+                        <td>XRP</td>
+                        <td>~$1.60</td>
+                        <td style="color:#34d399">+5%</td>
+                        <td>监管预期改善</td>
                     </tr>
                     <tr>
                         <td>Solana SOL</td>
-                        <td>$105</td>
-                        <td style="color:#f87171">-1.20%</td>
-                        <td>$48B</td>
+                        <td>~$95</td>
+                        <td style="color:#34d399">+8%</td>
+                        <td>生态发展</td>
                     </tr>
                 </tbody>
             </table>
+
+            <div class="news-item">
+                <div class="title">
+                    <span class="tag crypto">加密货币</span>
+                    比特币ETF资金回流，机构配置意愿回升
+                </div>
+                <div class="meta">IG Markets | 2026年2月26日</div>
+                <div class="summary">本周比特币和以太坊ETF录得净流入，标志着机构资金重新配置加密资产。衍生品市场杠杆水平已重置，为更干净的上涨创造条件。若突破$73,757阻力位，有望测试$76,702。</div>
+            </div>
         </div>
 
-        <!-- 全球财经新闻 -->
+        <!-- 重要财经新闻回顾 -->
         <div class="section">
-            <h2><span class="icon">📰</span>全球财经新闻</h2>
+            <h2><span class="icon">📰</span>重要财经新闻回顾</h2>
+            
             <div class="news-item">
                 <div class="title">
                     <span class="tag us">美国</span>
-                    <span class="tag macro">宏观</span>
-                    美联储官员暗示可能暂停加息
+                    <span class="tag macro">央行</span>
+                    特朗普提名凯文·沃什出任美联储主席
                 </div>
-                <div class="meta">Yahoo Finance | 2026-02-27</div>
-                <div class="summary">美联储最新会议纪要显示，多数官员支持在评估前期政策效果后再决定下一步行动...</div>
+                <div class="meta">Reuters / 华尔街见闻 | 2026年2月24日</div>
+                <div class="summary">特朗普提名前美联储理事凯文·沃什出任下任美联储主席。沃什以"通胀鹰派"著称，主张大幅缩减美联储6.6万亿美元资产负债表。市场担忧其政策立场可能推高长期利率，但导师德鲁肯米勒为其辩护称"他并非永久鹰派"。沃什与财长贝森特均为德鲁肯米勒"门徒"，两人协调将成为重塑市场走向的关键。</div>
             </div>
+
+            <div class="news-item">
+                <div class="title">
+                    <span class="tag us">美国</span>
+                    <span class="tag macro">政策</span>
+                    美联储会议纪要显露巨大分歧
+                </div>
+                <div class="meta">华尔街见闻 | 2026年2月19日</div>
+                <div class="summary">美联储会议纪要显示官员们对利率路径存在巨大分歧。一些官员支持进一步降息，另一些则暗示若通胀持续高于2%可能适合加息。大多数官员警告通胀下行进程可能比预期更慢。多位高官公开表示AI提升生产力可能意味着"更高的中性利率"，进一步收窄年内降息空间。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="title">
+                    <span class="tag us">美国</span>
+                    <span class="tag macro">通胀</span>
+                    美联储古尔斯比：当前通胀"还不够好"
+                </div>
+                <div class="meta">CNBC | 2026年2月24日</div>
+                <div class="summary">芝加哥联储主席古尔斯比表示，当前通胀水平"还不够好"，需要看到通胀向2%目标回落的广泛证据才会支持降息。尽管近期通胀超预期，他仍对年内"多次"降息持乐观态度。最高法院推翻特朗普紧急关税虽加剧不确定性，但可能为通胀降温。</div>
+            </div>
+
             <div class="news-item">
                 <div class="title">
                     <span class="tag cn">中国</span>
-                    <span class="tag stock">股市</span>
-                    央行宣布降准0.5个百分点
+                    <span class="tag macro">央行</span>
+                    央行下调远期售汇外汇风险准备金率至0
                 </div>
-                <div class="meta">财新网 | 2026-02-27</div>
-                <div class="summary">中国人民银行决定下调金融机构存款准备金率，释放长期资金约1万亿元...</div>
+                <div class="meta">财新网 | 2026年2月27日</div>
+                <div class="summary">中国人民银行宣布自2026年3月2日起将远期售汇业务的外汇风险准备金率从20%下调至0。这是时隔近三年半央行再次使用该逆周期调节工具。专家分析，此举释放了监管层避免人民币过快升值的政策信号，有助于稳定市场预期，促进外汇政策回归中性。</div>
             </div>
+
             <div class="news-item">
                 <div class="title">
-                    <span class="tag eu">欧洲</span>
-                    <span class="tag macro">宏观</span>
-                    欧洲央行维持利率不变
+                    <span class="tag cn">中国</span>
+                    <span class="tag macro">利率</span>
+                    2月LPR维持不变：1年期3.0%，5年期以上3.5%
                 </div>
-                <div class="meta">Reuters | 2026-02-27</div>
-                <div class="summary">欧洲央行在政策会议上决定维持主要再融资利率不变，符合市场预期...</div>
+                <div class="meta">人民日报 | 2026年2月23日</div>
+                <div class="summary">2月LPR报价出炉，两个期限品种均维持不变。东方金诚首席分析师王青表示，2月以来政策利率（央行7天期逆回购利率）保持稳定，意味着LPR报价的定价基础未变。央行此前定调对降准降息等工具运用要求"灵活高效"。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="title">
+                    <span class="tag us">美国</span>
+                    <span class="tag macro">就业</span>
+                    美国周度初请失业金人数小幅上升
+                </div>
+                <div class="meta">Reuters | 2026年2月26日</div>
+                <div class="summary">美国周度初请失业金人数增加4,000人至212,000人，劳动力市场维持稳定。强劲的就业数据降低了美联储在年中前降息的必要性，但并未完全排除今年降息的可能。多家机构仍预计今年将有两次降息，但时点推迟至下半年。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="title">
+                    <span class="tag us">美国</span>
+                    <span class="tag stock">科技</span>
+                    英伟达财报发布，AI板块受关注
+                </div>
+                <div class="meta">华尔街见闻 | 2026年2月25日</div>
+                <div class="summary">英伟达于2月25日发布财报，市场高度关注AI芯片需求前景。此前有报道称OpenAI对英伟达芯片的推理性能不满，已开始寻找替代品。科技股在财报前出现反弹，软件板块领涨。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="title">
+                    <span class="tag us">美国</span>
+                    <span class="tag commodity">关税</span>
+                    美最高法院否决特朗普紧急关税
+                </div>
+                <div class="meta">Yahoo Finance / 华尔街见闻 | 2026年2月20日</div>
+                <div class="summary">美国最高法院裁定否决特朗普的互惠关税授权，触发美元走弱，大宗商品市场出现 relief pop。然而零售商表示退税程序复杂漫长，企业计划将退款用于弥补成本而非降价，消费者难享实惠。特朗普同时启动新临时关税，使有效税率短暂下降后迅速反弹至13.7%。</div>
             </div>
         </div>
 
-        <!-- 宏观数据 -->
+        <!-- 宏观数据汇总 -->
         <div class="section">
-            <h2><span class="icon">📉</span>宏观数据</h2>
+            <h2><span class="icon">📉</span>宏观数据汇总</h2>
+            
+            <h3>美国数据</h3>
             <table>
                 <thead>
                     <tr>
                         <th>指标</th>
-                        <th>数值</th>
+                        <th>公布值</th>
                         <th>预期</th>
                         <th>前值</th>
+                        <th>日期</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>美国非农就业</td>
-                        <td>+18.5万</td>
-                        <td>+17.0万</td>
-                        <td>+22.3万</td>
+                        <td>周度初请失业金人数</td>
+                        <td>21.2万</td>
+                        <td>21.0万</td>
+                        <td>20.8万</td>
+                        <td>2月26日</td>
                     </tr>
                     <tr>
-                        <td>美国CPI同比</td>
-                        <td>3.1%</td>
-                        <td>3.2%</td>
-                        <td>3.4%</td>
+                        <td>核心PCE物价指数(同比)</td>
+                        <td>3.0%</td>
+                        <td>2.9%</td>
+                        <td>2.9%</td>
+                        <td>2月</td>
                     </tr>
                     <tr>
-                        <td>中国PMI</td>
-                        <td>50.8</td>
-                        <td>50.5</td>
-                        <td>50.2</td>
+                        <td>2月制造业PMI</td>
+                        <td>不及预期</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>2月</td>
+                    </tr>
+                    <tr>
+                        <td>2月服务业PMI</td>
+                        <td>不及预期</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>2月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>中国数据</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>指标</th>
+                        <th>公布值</th>
+                        <th>预期</th>
+                        <th>前值</th>
+                        <th>日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1月官方制造业PMI</td>
+                        <td>49.3</td>
+                        <td>49.5</td>
+                        <td>50.1</td>
+                        <td>2月1日</td>
+                    </tr>
+                    <tr>
+                        <td>1月非制造业PMI</td>
+                        <td>49.4</td>
+                        <td>50.0</td>
+                        <td>52.2</td>
+                        <td>2月1日</td>
+                    </tr>
+                    <tr>
+                        <td>2月LPR(1年期)</td>
+                        <td>3.0%</td>
+                        <td>3.0%</td>
+                        <td>3.0%</td>
+                        <td>2月23日</td>
+                    </tr>
+                    <tr>
+                        <td>2月LPR(5年期)</td>
+                        <td>3.5%</td>
+                        <td>3.5%</td>
+                        <td>3.5%</td>
+                        <td>2月23日</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>欧洲数据</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>指标</th>
+                        <th>公布值</th>
+                        <th>预期</th>
+                        <th>前值</th>
+                        <th>日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>欧元区制造业PMI</td>
+                        <td>创三年新高</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>2月</td>
+                    </tr>
+                    <tr>
+                        <td>欧元区1月CPI</td>
+                        <td>待公布</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>2月25日</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- 投资机会分析 -->
+        <!-- 下周投资机会 -->
         <div class="section">
-            <h2><span class="icon">💎</span>投资机会</h2>
+            <h2><span class="icon">💎</span>下周投资机会</h2>
             
             <div class="opportunity-card">
-                <h4>🔥 重点关注：科技股</h4>
-                <p>AI板块持续强势，NVIDIA、AMD等芯片股回调后可关注。中概股估值修复机会显现。</p>
+                <h4>🔥 重点关注：黄金</h4>
+                <p>黄金突破$5,200创历史新高，技术形态维持强势。若回调至$5,000-$5,100区间可考虑布局。驱动因素：美元走弱预期、地缘政治风险、央行购金需求。目标位看向$5,280-$5,500。</p>
             </div>
 
             <div class="opportunity-card">
-                <h4>⛽ 大宗商品：原油</h4>
-                <p>地缘政治风险支撑油价，关注OPEC+减产政策变化。油气板块股息率吸引。</p>
+                <h4>📈 美股：科技股</h4>
+                <p>英伟达财报后AI板块情绪改善，关注回调后的布局机会。软件板块本周领涨，显示资金轮动迹象。建议关注：MSFT、GOOGL、AMD等龙头，以及估值合理的SaaS公司。</p>
             </div>
 
             <div class="opportunity-card">
-                <h4>₿ 加密货币：比特币</h4>
-                <p>ETF资金持续流入，减半周期临近。关注5.5万美元支撑位，突破6万可看高一线。</p>
+                <h4>🇨🇳 港股/A股：科技成长</h4>
+                <p>港股重上27,000点，市场情绪改善。春节后A股"开门红"行情启动，成交额放大。建议关注：互联网龙头、新能源、AI产业链。恒指回调至26,500附近可考虑加仓。</p>
             </div>
 
             <div class="opportunity-card">
-                <h4>🏦 宏观策略：美元</h4>
-                <p>美联储降息预期延后，美元指数维持强势。关注新兴市场货币贬值压力。</p>
+                <h4>⛽ 原油：事件驱动</h4>
+                <p>美伊核谈判是下周关键变量。若谈判破裂，油价可能快速跳涨$15-20/桶。建议关注：XOM、CVX等油气股，以及原油ETF(USO)。技术位：WTI突破$67.20看多至$70。</p>
+            </div>
+
+            <div class="opportunity-card">
+                <h4>₿ 加密货币：BTC/ETH</h4>
+                <p>比特币突破$70,000阻力位后，若站稳可看高至$73,757-$76,702。ETH受益于Layer2发展和质押需求，表现可能继续优于BTC。关注ETF资金流向。</p>
+            </div>
+
+            <div class="opportunity-card">
+                <h4>🏭 工业金属：铜</h4>
+                <p>铜价维持$5.96/lb高位，AI数据中心和电网电气化需求支撑。摩根大通Q2目标价$12,500/吨。建议关注：FCX、SCCO等铜矿股，以及铜ETF(JJC)。</p>
+            </div>
+        </div>
+
+        <!-- 风险提示 -->
+        <div class="section">
+            <h2><span class="icon">⚠️</span>下周风险提示</h2>
+            
+            <div class="risk-card">
+                <h4>🔴 美联储政策不确定性</h4>
+                <p>沃什获美联储主席提名引发鹰派预期，若其坚持缩表+降息的组合，可能推高长端利率，对股市估值构成压力。关注其国会听证表态。</p>
+            </div>
+
+            <div class="risk-card">
+                <h4>🔴 美伊核谈判风险</h4>
+                <p>美伊核谈判是下周最大地缘政治风险。谈判破裂或军事冲突将迅速推高油价和避险情绪，冲击风险资产。建议保持灵活仓位。</p>
+            </div>
+
+            <div class="risk-card">
+                <h4>🟡 通胀数据超预期</h4>
+                <p>美国核心PCE已升至3.0%，若后续数据继续超预期，可能彻底打消年内降息预期，引发市场重新定价。</p>
+            </div>
+
+            <div class="risk-card">
+                <h4>🟡 人民币汇率波动</h4>
+                <p>央行下调外汇风险准备金率释放避免人民币过快升值信号。若美元反弹，人民币汇率可能出现双向波动，影响外资流向。</p>
+            </div>
+
+            <div class="risk-card">
+                <h4>🟡 科技股估值风险</h4>
+                <p>美股科技股估值仍处于历史高位，若AI投资热情降温或业绩不及预期，可能引发板块回调。建议控制仓位，设置止损。</p>
             </div>
         </div>
 
         <!-- 深度分析 -->
         <div class="section analysis-box">
-            <h3>🔍 深度分析</h3>
+            <h3>🔍 本周深度分析</h3>
             <ul>
-                <li><strong>美联储政策：</strong>通胀回落但仍高于目标，预计2024年中开始降息，全年降息75-100bp</li>
-                <li><strong>中国经济：</strong>PMI重回扩张区间，政策持续发力，关注消费复苏力度</li>
-                <li><strong>全球股市：</strong>美股估值偏高，A股港股估值吸引，欧股受益于降息预期</li>
-                <li><strong>风险提示：</strong>地缘政治、美国大选、中国房地产、日本央行政策转向</li>
+                <li><strong>美联储政策转向：</strong>沃什提名标志着美联储可能进入"缩表+降息"的新阶段，与特朗普压低借贷成本的诉求存在张力。市场需重新评估利率路径。</li>
+                <li><strong>中国政策定力：</strong>央行下调外汇风险准备金率显示政策层对汇率波动的容忍度提升，LPR维持不变表明货币政策保持定力，等待更好时机。</li>
+                <li><strong>AI投资热潮：</strong>尽管OpenAI对英伟达芯片性能表示不满，AI基础设施投资热情不减。Anthropic发布企业级AI工具，普华永道等巨头加速布局。</li>
+                <li><strong>大宗商品超级周期：</strong>黄金、铜等金属受多重因素支撑：央行购金、AI数据中心需求、能源转型、供应链约束。结构性牛市可能延续。</li>
+                <li><strong>加密货币机构化：</strong>ETF资金持续流入显示机构配置加密资产的意愿回升。比特币作为"数字黄金"的定位进一步巩固。</li>
             </ul>
         </div>
 
         <footer>
-            <p>信息来源：Yahoo Finance、Bloomberg、Reuters、财新、华尔街日报、东方财富</p>
-            <p>更新时间：周一至周五7:30日报 | 周六7:30周报 | 仅供参考，不构成投资建议</p>
+            <p>信息来源：Yahoo Finance、Bloomberg、Reuters、WSJ、FT、财新网、东方财富、新浪财经、华尔街见闻</p>
+            <p>报告日期：2026年2月27日 | 仅供参考，不构成投资建议</p>
         </footer>
     </div>
 </body>
