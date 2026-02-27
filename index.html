@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>财经资讯</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; 
+            background: #0a0f1c; 
+            color: #e8eaed; 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 15px; 
+        }
+        header { 
+            background: linear-gradient(135deg, #047857 0%, #059669 50%, #10b981 100%); 
+            color: white; 
+            padding: 30px 15px; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3); 
+        }
+        header h1 { 
+            font-size: 1.8rem; 
+            margin-bottom: 8px; 
+        }
+        header .subtitle { 
+            opacity: 0.9; 
+            font-size: 0.95rem; 
+        }
+        header .date { 
+            margin-top: 12px; 
+            font-size: 0.85rem; 
+            opacity: 0.8; 
+        }
+        .section { 
+            background: #111827; 
+            border-radius: 12px; 
+            padding: 20px 15px; 
+            margin-bottom: 15px; 
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3); 
+        }
+        .section h2 { 
+            color: #34d399; 
+            font-size: 1.2rem; 
+            margin-bottom: 15px; 
+            padding-bottom: 8px; 
+            border-bottom: 2px solid #059669; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+        }
+        .section h2 .icon { 
+            font-size: 1.1rem; 
+        }
+        .market-overview {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .market-card {
+            background: #0a0f1c;
+            border-radius: 10px;
+            padding: 15px 10px;
+            text-align: center;
+            border: 1px solid #1f2937;
+        }
+        .market-card .name {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            margin-bottom: 5px;
+        }
+        .market-card .value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #f9fafb;
+        }
+        .market-card .change {
+            font-size: 0.8rem;
+            margin-top: 3px;
+        }
+        .market-card .change.up { color: #34d399; }
+        .market-card .change.down { color: #f87171; }
+        .news-item { 
+            padding: 15px 0; 
+            border-bottom: 1px solid #1f2937; 
+        }
+        .news-item:last-child { 
+            border-bottom: none; 
+        }
+        .news-item .title { 
+            font-weight: 600; 
+            color: #f9fafb; 
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .news-item .meta { 
+            font-size: 0.75rem; 
+            color: #9ca3af;
+            margin-bottom: 8px;
+        }
+        .news-item .summary { 
+            font-size: 0.85rem; 
+            color: #d1d5db; 
+            line-height: 1.6;
+        }
+        .tag { 
+            display: inline-block; 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            font-size: 0.7rem; 
+            margin-right: 5px;
+            font-weight: 500;
+        }
+        .tag.stock { background: #3b82f6; color: white; }
+        .tag.commodity { background: #f59e0b; color: white; }
+        .tag.crypto { background: #8b5cf6; color: white; }
+        .tag.macro { background: #10b981; color: white; }
+        .tag.cn { background: #ef4444; color: white; }
+        .tag.us { background: #3b82f6; color: white; }
+        .tag.eu { background: #06b6d4; color: white; }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+        th, td { 
+            padding: 10px 8px; 
+            text-align: left; 
+            border-bottom: 1px solid #1f2937; 
+        }
+        th { 
+            background: #0a0f1c; 
+            font-weight: 600; 
+            color: #9ca3af; 
+            font-size: 0.8rem;
+        }
+        tr:hover { background: #1f2937; }
+        .hot-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .topic-tag {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        .analysis-box { 
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); 
+            color: white; 
+            border-radius: 12px; 
+            padding: 20px 15px; 
+            border: 1px solid #059669;
+        }
+        .analysis-box h3 { 
+            margin-bottom: 12px; 
+            font-size: 1.1rem;
+            color: #34d399;
+        }
+        .analysis-box ul { 
+            list-style: none; 
+            font-size: 0.9rem;
+        }
+        .analysis-box li { 
+            padding: 6px 0; 
+            padding-left: 16px; 
+            position: relative;
+            line-height: 1.5;
+        }
+        .analysis-box li:before { 
+            content: "▸"; 
+            position: absolute; 
+            left: 0; 
+            color: #34d399; 
+        }
+        .opportunity-card {
+            background: #0a0f1c;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 3px solid #f59e0b;
+        }
+        .opportunity-card h4 {
+            color: #fbbf24;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .opportunity-card p {
+            color: #d1d5db;
+            font-size: 0.85rem;
+        }
+        footer { 
+            text-align: center; 
+            padding: 20px 15px; 
+            color: #6b7280; 
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+        @media (min-width: 768px) {
+            .container { padding: 20px; }
+            header { padding: 40px 20px; }
+            header h1 { font-size: 2.2rem; }
+            .section { padding: 25px 20px; }
+            .section h2 { font-size: 1.4rem; }
+            .market-overview { grid-template-columns: repeat(4, 1fr); }
+            table { font-size: 0.95rem; }
+            footer { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📈 财经资讯</h1>
+            <div class="subtitle">Global Financial Intelligence Report</div>
+            <div class="date">2026年2月27日 星期五 | 日报</div>
+        </header>
+
+        <!-- 今日热点 -->
+        <div class="section">
+            <h2><span class="icon">🔥</span>今日热点</h2>
+            <div class="hot-topics">
+                <span class="topic-tag">美联储政策</span>
+                <span class="topic-tag">原油价格</span>
+                <span class="topic-tag">比特币</span>
+                <span class="topic-tag">A股走势</span>
+                <span class="topic-tag">美元指数</span>
+            </div>
+        </div>
+
+        <!-- 全球市场概览 -->
+        <div class="section">
+            <h2><span class="icon">🌍</span>全球市场概览</h2>
+            <div class="market-overview">
+                <div class="market-card">
+                    <div class="name">上证指数</div>
+                    <div class="value">3,380.00</div>
+                    <div class="change up">+0.50%</div>
+                </div>
+                <div class="market-card">
+                    <div class="name">纳斯达克</div>
+                    <div class="value">18,500.00</div>
+                    <div class="change down">-0.30%</div>
+                </div>
+                <div class="market-card">
+                    <div class="name">布伦特原油</div>
+                    <div class="value">$82.50</div>
+                    <div class="change up">+1.20%</div>
+                </div>
+                <div class="market-card">
+                    <div class="name">比特币</div>
+                    <div class="value">$58,000</div>
+                    <div class="change up">+2.50%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 股票市场 -->
+        <div class="section">
+            <h2><span class="icon">📊</span>股票市场</h2>
+            <h3>A股</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>指数</th>
+                        <th>点位</th>
+                        <th>涨跌</th>
+                        <th>成交额</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>上证指数</td>
+                        <td>3,380.00</td>
+                        <td style="color:#34d399">+0.50%</td>
+                        <td>4,500亿</td>
+                    </tr>
+                    <tr>
+                        <td>深证成指</td>
+                        <td>10,800.00</td>
+                        <td style="color:#34d399">+0.80%</td>
+                        <td>6,200亿</td>
+                    </tr>
+                    <tr>
+                        <td>创业板指</td>
+                        <td>2,180.00</td>
+                        <td style="color:#f87171">-0.20%</td>
+                        <td>2,800亿</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>美股</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>指数</th>
+                        <th>点位</th>
+                        <th>涨跌</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>道琼斯</td>
+                        <td>43,500.00</td>
+                        <td style="color:#34d399">+0.20%</td>
+                    </tr>
+                    <tr>
+                        <td>标普500</td>
+                        <td>5,980.00</td>
+                        <td style="color:#f87171">-0.15%</td>
+                    </tr>
+                    <tr>
+                        <td>纳斯达克</td>
+                        <td>18,500.00</td>
+                        <td style="color:#f87171">-0.30%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 大宗商品 -->
+        <div class="section">
+            <h2><span class="icon">⛽</span>大宗商品</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>品种</th>
+                        <th>价格</th>
+                        <th>涨跌</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>布伦特原油</td>
+                        <td>$82.50</td>
+                        <td style="color:#34d399">+1.20%</td>
+                        <td>供应担忧</td>
+                    </tr>
+                    <tr>
+                        <td>WTI原油</td>
+                        <td>$78.30</td>
+                        <td style="color:#34d399">+1.10%</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>黄金</td>
+                        <td>$2,050/oz</td>
+                        <td style="color:#34d399">+0.50%</td>
+                        <td>避险需求</td>
+                    </tr>
+                    <tr>
+                        <td>铜</td>
+                        <td>$8,500/吨</td>
+                        <td style="color:#f87171">-0.30%</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 加密货币 -->
+        <div class="section">
+            <h2><span class="icon">₿</span>加密货币</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>币种</th>
+                        <th>价格(USD)</th>
+                        <th>24h涨跌</th>
+                        <th>市值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>比特币 BTC</td>
+                        <td>$58,000</td>
+                        <td style="color:#34d399">+2.50%</td>
+                        <td>$1.14T</td>
+                    </tr>
+                    <tr>
+                        <td>以太坊 ETH</td>
+                        <td>$3,200</td>
+                        <td style="color:#34d399">+1.80%</td>
+                        <td>$385B</td>
+                    </tr>
+                    <tr>
+                        <td>Solana SOL</td>
+                        <td>$105</td>
+                        <td style="color:#f87171">-1.20%</td>
+                        <td>$48B</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 全球财经新闻 -->
+        <div class="section">
+            <h2><span class="icon">📰</span>全球财经新闻</h2>
+            <div class="news-item">
+                <div class="title">
+                    <span class="tag us">美国</span>
+                    <span class="tag macro">宏观</span>
+                    美联储官员暗示可能暂停加息
+                </div>
+                <div class="meta">Yahoo Finance | 2026-02-27</div>
+                <div class="summary">美联储最新会议纪要显示，多数官员支持在评估前期政策效果后再决定下一步行动...</div>
+            </div>
+            <div class="news-item">
+                <div class="title">
+                    <span class="tag cn">中国</span>
+                    <span class="tag stock">股市</span>
+                    央行宣布降准0.5个百分点
+                </div>
+                <div class="meta">财新网 | 2026-02-27</div>
+                <div class="summary">中国人民银行决定下调金融机构存款准备金率，释放长期资金约1万亿元...</div>
+            </div>
+            <div class="news-item">
+                <div class="title">
+                    <span class="tag eu">欧洲</span>
+                    <span class="tag macro">宏观</span>
+                    欧洲央行维持利率不变
+                </div>
+                <div class="meta">Reuters | 2026-02-27</div>
+                <div class="summary">欧洲央行在政策会议上决定维持主要再融资利率不变，符合市场预期...</div>
+            </div>
+        </div>
+
+        <!-- 宏观数据 -->
+        <div class="section">
+            <h2><span class="icon">📉</span>宏观数据</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>指标</th>
+                        <th>数值</th>
+                        <th>预期</th>
+                        <th>前值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>美国非农就业</td>
+                        <td>+18.5万</td>
+                        <td>+17.0万</td>
+                        <td>+22.3万</td>
+                    </tr>
+                    <tr>
+                        <td>美国CPI同比</td>
+                        <td>3.1%</td>
+                        <td>3.2%</td>
+                        <td>3.4%</td>
+                    </tr>
+                    <tr>
+                        <td>中国PMI</td>
+                        <td>50.8</td>
+                        <td>50.5</td>
+                        <td>50.2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 投资机会分析 -->
+        <div class="section">
+            <h2><span class="icon">💎</span>投资机会</h2>
+            
+            <div class="opportunity-card">
+                <h4>🔥 重点关注：科技股</h4>
+                <p>AI板块持续强势，NVIDIA、AMD等芯片股回调后可关注。中概股估值修复机会显现。</p>
+            </div>
+
+            <div class="opportunity-card">
+                <h4>⛽ 大宗商品：原油</h4>
+                <p>地缘政治风险支撑油价，关注OPEC+减产政策变化。油气板块股息率吸引。</p>
+            </div>
+
+            <div class="opportunity-card">
+                <h4>₿ 加密货币：比特币</h4>
+                <p>ETF资金持续流入，减半周期临近。关注5.5万美元支撑位，突破6万可看高一线。</p>
+            </div>
+
+            <div class="opportunity-card">
+                <h4>🏦 宏观策略：美元</h4>
+                <p>美联储降息预期延后，美元指数维持强势。关注新兴市场货币贬值压力。</p>
+            </div>
+        </div>
+
+        <!-- 深度分析 -->
+        <div class="section analysis-box">
+            <h3>🔍 深度分析</h3>
+            <ul>
+                <li><strong>美联储政策：</strong>通胀回落但仍高于目标，预计2024年中开始降息，全年降息75-100bp</li>
+                <li><strong>中国经济：</strong>PMI重回扩张区间，政策持续发力，关注消费复苏力度</li>
+                <li><strong>全球股市：</strong>美股估值偏高，A股港股估值吸引，欧股受益于降息预期</li>
+                <li><strong>风险提示：</strong>地缘政治、美国大选、中国房地产、日本央行政策转向</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>信息来源：Yahoo Finance、Bloomberg、Reuters、财新、华尔街日报、东方财富</p>
+            <p>更新时间：周一至周五7:30日报 | 周六7:30周报 | 仅供参考，不构成投资建议</p>
+        </footer>
+    </div>
+</body>
+</html>
